@@ -109,12 +109,9 @@
               alt="Badge Lysis"
               onerror="this.style.display='none'; this.parentElement.classList.add('badge--placeholder');"
             />
-            <div class="badge__fallback">
-              <span>badge</span>
-            </div>
+            <div class="badge__fallback"><span>badge</span></div>
           </div>
 
-          <!-- Animated “tech waveform” -->
           <div class="panel glass">
             <div class="panel__top">
               <span class="chip">audio</span>
@@ -122,7 +119,15 @@
               <span class="chip">fun (mais propre)</span>
             </div>
 
-            <svg class="wave" viewBox="0 0 800 260" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Visuel tech">
+            <!-- ✅ FIX: viewBox élargi + overflow visible => plus de coupe à droite -->
+            <svg class="wave"
+              viewBox="-30 0 860 260"
+              overflow="visible"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Visuel tech">
+
               <defs>
                 <linearGradient id="g1" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
                   <stop offset="0" stop-color="currentColor" stop-opacity="0.9"/>
@@ -347,7 +352,8 @@
             <div class="form__hint">
               (Ce formulaire est un “mock” : clique sur le bouton en dessous pour envoyer un mail.)
             </div>
-            <a class="btn btn--primary btn--full" id="mailtoBtn" href="mailto:contact@lysis.fr?subject=Demande%20-%20Lysis&body=Bonjour%2C%0A%0AJe%20m%E2%80%99appelle%20...%0AProjet%20%3A%20...%0A%0AMerci%20%21">
+            <a class="btn btn--primary btn--full" id="mailtoBtn"
+               href="mailto:contact@lysis.fr?subject=Demande%20-%20Lysis&body=Bonjour%2C%0A%0AJe%20m%E2%80%99appelle%20...%0AProjet%20%3A%20...%0A%0AMerci%20%21">
               Envoyer via email ↗
             </a>
           </form>
