@@ -11,9 +11,8 @@ function closeMobile(){
 
 burger?.addEventListener("click", () => {
   const opened = burger.getAttribute("aria-expanded") === "true";
-  if (opened) {
-    closeMobile();
-  } else {
+  if (opened) closeMobile();
+  else{
     mobile.style.display = "block";
     mobile.setAttribute("aria-hidden", "false");
     burger.setAttribute("aria-expanded", "true");
@@ -23,11 +22,9 @@ burger?.addEventListener("click", () => {
 mobile?.addEventListener("click", (e) => {
   if (e.target.tagName.toLowerCase() === "a") closeMobile();
 });
-
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeMobile();
 });
-
 document.addEventListener("click", (e) => {
   const t = e.target;
   if (!mobile || !burger) return;
@@ -56,11 +53,8 @@ copyBtn?.addEventListener("click", async () => {
 const reveals = document.querySelectorAll(".reveal");
 const io = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("is-in");
-    } else {
-      entry.target.classList.remove("is-in");
-    }
+    if (entry.isIntersecting) entry.target.classList.add("is-in");
+    else entry.target.classList.remove("is-in");
   });
 }, { threshold: 0.18 });
 
@@ -75,6 +69,8 @@ const paths = {
 const dotsGroup = document.querySelector(".wave__dots");
 
 function makePath(t, amp, freq, yBase){
+  // ⚠️ on génère encore sur une largeur "800" (logique),
+  // le viewBox élargi du SVG gère la marge pour éviter la coupe.
   const w = 800;
   const points = 64;
   const step = w / points;
@@ -130,7 +126,7 @@ function updateMailto(){
     `Projet : ${proj || "..."}%0A%0A` +
     `${msg || "Message : ..."}%0A%0AMerci !`;
 
-  const email = "contact@lysis.fr"; // change ici aussi si besoin
+  const email = "contact@lysis.fr"; // change ici si besoin
   if (mailtoBtn) mailtoBtn.href = `mailto:${email}?subject=Demande%20-%20Lysis&body=${body}`;
 }
 
