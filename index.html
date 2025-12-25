@@ -1,13 +1,18 @@
-
 <!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#0b0f1a" />
-  <title>Lysis — Studio & Formations (version cool)</title>
+
+  <title>Lysis — Studio & Formations (cool + tech)</title>
   <meta name="description" content="Lysis : studio audio & formations MAO. Une vibe fun, un rendu pro, et du son qui claque (gentiment)." />
 
+  <!-- Icons (assets) -->
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +22,7 @@
 
 <body>
   <!-- Background layers -->
-  <div class="bg">
+  <div class="bg" aria-hidden="true">
     <div class="bg__grid"></div>
     <div class="bg__glow bg__glow--a"></div>
     <div class="bg__glow bg__glow--b"></div>
@@ -75,8 +80,7 @@
 
           <div class="hero__actions">
             <a class="btn btn--primary" href="#contact">
-              Parlons de ton projet
-              <span class="btn__icon" aria-hidden="true">↗</span>
+              Parlons de ton projet <span class="btn__icon" aria-hidden="true">↗</span>
             </a>
             <a class="btn btn--ghost" href="#studio">Voir le studio</a>
           </div>
@@ -98,15 +102,19 @@
         </div>
 
         <div class="hero__art reveal">
-          <!-- Badge logo slot -->
-          <div class="badge glass" title="Ton badge logo ici">
-            <img src="assets/badge.svg" alt="Badge Lysis" onerror="this.style.display='none'; this.parentElement.classList.add('badge--placeholder');" />
+          <!-- Badge (assets) -->
+          <div class="badge glass" title="Badge Lysis">
+            <img
+              src="assets/badge.png"
+              alt="Badge Lysis"
+              onerror="this.style.display='none'; this.parentElement.classList.add('badge--placeholder');"
+            />
             <div class="badge__fallback">
-              <span>+ ton badge</span>
+              <span>badge</span>
             </div>
           </div>
 
-          <!-- Animated “tech waveform” (SVG) -->
+          <!-- Animated “tech waveform” -->
           <div class="panel glass">
             <div class="panel__top">
               <span class="chip">audio</span>
@@ -139,7 +147,6 @@
               <path class="wave__path wave__path--b" d="" stroke="url(#g1)" stroke-width="2" opacity="0.7"/>
               <path class="wave__path wave__path--c" d="" stroke="url(#g1)" stroke-width="1.5" opacity="0.5"/>
 
-              <!-- Dots -->
               <g class="wave__dots" opacity="0.9"></g>
             </svg>
 
@@ -161,18 +168,8 @@
 
           <div class="ticker glass" aria-hidden="true">
             <div class="ticker__track">
-              <span>⚡ précision</span>
-              <span>🎧 écoute</span>
-              <span>🧠 pédagogie</span>
-              <span>✨ créativité</span>
-              <span>🔧 technique</span>
-              <span>😄 chill</span>
-              <span>⚡ précision</span>
-              <span>🎧 écoute</span>
-              <span>🧠 pédagogie</span>
-              <span>✨ créativité</span>
-              <span>🔧 technique</span>
-              <span>😄 chill</span>
+              <span>⚡ précision</span><span>🎧 écoute</span><span>🧠 pédagogie</span><span>✨ créativité</span><span>🔧 technique</span><span>😄 chill</span>
+              <span>⚡ précision</span><span>🎧 écoute</span><span>🧠 pédagogie</span><span>✨ créativité</span><span>🔧 technique</span><span>😄 chill</span>
             </div>
           </div>
         </div>
@@ -265,108 +262,3 @@
     <!-- PROCESS -->
     <section id="process" class="section">
       <div class="container">
-        <div class="section__head reveal">
-          <h2>La méthode (simple, mais pas simpliste)</h2>
-          <p>Un cadre clair, des choix assumés, et des étapes qui font gagner du temps.</p>
-        </div>
-
-        <div class="steps">
-          <div class="step glass reveal">
-            <div class="step__n">01</div>
-            <div class="step__b">
-              <h3>Diagnostic</h3>
-              <p>On écoute, on clarifie l’objectif, on définit la “couleur”.</p>
-            </div>
-          </div>
-
-          <div class="step glass reveal">
-            <div class="step__n">02</div>
-            <div class="step__b">
-              <h3>Plan d’action</h3>
-              <p>Étapes + priorités. On évite la spirale “je retouche tout”.</p>
-            </div>
-          </div>
-
-          <div class="step glass reveal">
-            <div class="step__n">03</div>
-            <div class="step__b">
-              <h3>Exécution</h3>
-              <p>On fait. On compare. On valide. (Et on garde ton style.)</p>
-            </div>
-          </div>
-
-          <div class="step glass reveal">
-            <div class="step__n">04</div>
-            <div class="step__b">
-              <h3>Livraison</h3>
-              <p>Fichiers propres, conseils d’export, et next steps si besoin.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section section--alt">
-      <div class="container">
-        <div class="contact glass reveal">
-          <div class="contact__copy">
-            <h2>Contact</h2>
-            <p>
-              Tu veux un devis, un programme, ou juste vérifier que ton kick tape assez ?
-              Écris-moi — réponse humaine, pas un bot. (Enfin… presque.)
-            </p>
-
-            <div class="contact__rows">
-              <div class="row">
-                <span class="row__k">Email</span>
-                <a class="row__v" href="mailto:contact@lysis.fr">contact@lysis.fr</a>
-              </div>
-              <div class="row">
-                <span class="row__k">Instagram</span>
-                <a class="row__v" href="#" target="_blank" rel="noreferrer">à renseigner</a>
-              </div>
-            </div>
-
-            <div class="contact__cta">
-              <a class="btn btn--primary" href="mailto:contact@lysis.fr">Envoyer un email</a>
-              <button class="btn btn--ghost" id="copyMail" type="button">Copier l’email</button>
-            </div>
-          </div>
-
-          <form class="contact__form" onsubmit="return false">
-            <div class="field">
-              <label for="f1">Ton nom</label>
-              <input id="f1" placeholder="Ex: Alex" autocomplete="name" />
-            </div>
-            <div class="field">
-              <label for="f2">Ton projet</label>
-              <input id="f2" placeholder="Ex: EP 5 titres / initiation Logic" />
-            </div>
-            <div class="field">
-              <label for="f3">Message</label>
-              <textarea id="f3" rows="5" placeholder="Raconte-moi en 3 lignes (ou 30, je lis)."></textarea>
-            </div>
-            <div class="form__hint">
-              (Ce formulaire est un “mock” : clique sur le bouton en dessous pour envoyer un mail.)
-            </div>
-            <a class="btn btn--primary btn--full" id="mailtoBtn" href="mailto:contact@lysis.fr?subject=Demande%20-%20Lysis&body=Bonjour%2C%0A%0AJe%20m%E2%80%99appelle%20...%0AProjet%20%3A%20...%0A%0AMerci%20%21">
-              Envoyer via email ↗
-            </a>
-          </form>
-        </div>
-
-        <footer class="foot">
-          <span>© <span id="year"></span> Lysis</span>
-          <span class="sep">•</span>
-          <span>Studio & Formations</span>
-          <span class="sep">•</span>
-          <a href="#top">Retour en haut ↑</a>
-        </footer>
-      </div>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
