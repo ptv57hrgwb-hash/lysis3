@@ -1,12 +1,12 @@
-
 // Mobile menu
 const burger = document.getElementById("burger");
 const mobile = document.getElementById("mobile");
 
 function closeMobile(){
+  if (!mobile || !burger) return;
   mobile.style.display = "none";
   mobile.setAttribute("aria-hidden", "true");
-  burger?.setAttribute("aria-expanded", "false");
+  burger.setAttribute("aria-expanded", "false");
 }
 
 burger?.addEventListener("click", () => {
@@ -23,9 +23,11 @@ burger?.addEventListener("click", () => {
 mobile?.addEventListener("click", (e) => {
   if (e.target.tagName.toLowerCase() === "a") closeMobile();
 });
+
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeMobile();
 });
+
 document.addEventListener("click", (e) => {
   const t = e.target;
   if (!mobile || !burger) return;
@@ -40,13 +42,12 @@ document.getElementById("year").textContent = String(new Date().getFullYear());
 // Copy email
 const copyBtn = document.getElementById("copyMail");
 copyBtn?.addEventListener("click", async () => {
-  const mail = "contact@lysis.fr"; // <- change ici si besoin
+  const mail = "contact@lysis.fr"; // change ici si besoin
   try {
     await navigator.clipboard.writeText(mail);
     copyBtn.textContent = "Copié ✅";
     setTimeout(() => (copyBtn.textContent = "Copier l’email"), 1200);
   } catch {
-    // fallback
     window.prompt("Copie l’email :", mail);
   }
 });
@@ -58,7 +59,6 @@ const io = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("is-in");
     } else {
-      // important: remove when out so it replays next time
       entry.target.classList.remove("is-in");
     }
   });
@@ -75,9 +75,7 @@ const paths = {
 const dotsGroup = document.querySelector(".wave__dots");
 
 function makePath(t, amp, freq, yBase){
-  // Generates an SVG path from left to right
   const w = 800;
-  const h = 260;
   const points = 64;
   const step = w / points;
 
@@ -116,7 +114,7 @@ function tick(t){
 }
 requestAnimationFrame(tick);
 
-// Optional: update mailto body from mock form inputs
+// Update mailto body from mock form inputs
 const mailtoBtn = document.getElementById("mailtoBtn");
 const f1 = document.getElementById("f1");
 const f2 = document.getElementById("f2");
@@ -126,14 +124,14 @@ function updateMailto(){
   const name = encodeURIComponent((f1?.value || "").trim());
   const proj = encodeURIComponent((f2?.value || "").trim());
   const msg  = encodeURIComponent((f3?.value || "").trim());
+
   const body =
     `Bonjour,%0A%0AJe m’appelle ${name || "..."}%0A` +
     `Projet : ${proj || "..."}%0A%0A` +
     `${msg || "Message : ..."}%0A%0AMerci !`;
 
-  // Change email here too if needed
-  const email = "contact@lysis.fr";
-  mailtoBtn.href = `mailto:${email}?subject=Demande%20-%20Lysis&body=${body}`;
+  const email = "contact@lysis.fr"; // change ici aussi si besoin
+  if (mailtoBtn) mailtoBtn.href = `mailto:${email}?subject=Demande%20-%20Lysis&body=${body}`;
 }
 
 [f1,f2,f3].forEach(el => el?.addEventListener("input", updateMailto));
