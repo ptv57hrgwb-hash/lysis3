@@ -1,3 +1,5 @@
+html, body { overflow-x: hidden; }
+
 :root{
   --bg: #070a12;
   --bg2:#0b0f1a;
@@ -24,7 +26,14 @@ body{
 }
 
 /* Background */
-.bg{ position:fixed; inset:0; z-index:-1; pointer-events:none; }
+.bg{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  overflow:hidden; /* ✅ empêche le scroll horizontal */
+}
+
 .bg__grid{
   position:absolute; inset:-2px;
   background:
